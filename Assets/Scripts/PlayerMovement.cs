@@ -48,10 +48,13 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
-        if (value.isPressed)
+        if (isAlive)
         {
-            myRigidBody.linearVelocity += new Vector2(0f, jumpSpeed);
+            if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
+            if (value.isPressed)
+            {
+                myRigidBody.linearVelocity += new Vector2(0f, jumpSpeed);
+            }
         }
 
     }
@@ -92,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
         {
             isAlive = false;
             myAnimator.SetTrigger("Dying");
