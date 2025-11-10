@@ -35,7 +35,8 @@ Transform:
   m_LocalPosition: {x: -3.31, y: 2.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4870587251735236074}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1585286093533409624
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1332029561
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 4801536866229146781, guid: 051d7f53c157ab14499738b7927776f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -190,6 +191,9 @@ MonoBehaviour:
   moveSpeed: 12
   jumpSpeed: 10
   climbSpeed: 5
+  deathkick: {x: 10, y: 30}
+  bullet: {fileID: 5197301675966918434, guid: 7fa905977851f124aa0fb4e2b33da365, type: 3}
+  gun: {fileID: 4870587251735236074}
 --- !u!61 &8356119268365122732
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -273,3 +277,34 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0350461, y: -0.089900255}
   m_Size: {x: 0.44860744, y: 0.8201995}
   m_Direction: 0
+--- !u!1 &6456516488040943026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4870587251735236074}
+  m_Layer: 8
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4870587251735236074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456516488040943026}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.27, y: -0.268, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4848531588096195843}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
